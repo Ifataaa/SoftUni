@@ -1,16 +1,17 @@
 function extractIncreasingSubsetFromArray(arr) {
     let result = [];
+    let biggestEl = arr.shift();
 
-    for (let i = arr.length; i < arr. length; i++) {
-        if (arr[i + 1] > arr[i]) {
-            result.push(i);
-        } else {
-            continue;
+    result.push(biggestEl);
+
+    arr.forEach(x => {
+        if (x >= biggestEl) {
+            result.push(x);
+            biggestEl = x
         }
-    }
+    });
 
-    console.log(result)
-
+    return result;
 }
 
 // extractIncreasingSubsetFromArray([1, 
@@ -23,15 +24,15 @@ function extractIncreasingSubsetFromArray(arr) {
 //     2, 
 //     24]
 //     );
-extractIncreasingSubsetFromArray([1, 
-2, 
-3,
-4]
-);
-// extractIncreasingSubsetFromArray([20, 
-// 3, 
-// 2, 
-// 15,
-// 6, 
-// 1]
+// extractIncreasingSubsetFromArray([1,
+//     2,
+//     3,
+//     4]
 // );
+extractIncreasingSubsetFromArray([20,
+3,
+2,
+15,
+6,
+1]
+);
